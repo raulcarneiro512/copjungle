@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .carousel-images {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-images img {
+            min-width: 100%; /* Exibe uma imagem por vez */
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        h1 {
+            color: white;
+            z-index: 1;
+            margin-bottom: 50px;
+            border: 2px solid white;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1;
+        }
+
+        .button {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: whitesmoke;
+            color: black;
+            border: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #3498db;
+        }
+
+        #overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        #loading-spinner {
+            border: 16px solid #3498db;
+            border-top: 16px blue;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+        <div class="carousel-images" id="carousel-images">
+            <img src="https://www.ahstatic.com/photos/b9k6_ho_00_p_1024x768.jpg">
+            <img src="https://www.ahstatic.com/photos/b203_ho_00_p_1024x768.jpg">
+            <img src="https://papocultura.com.br/wp-content/uploads/2022/11/Mercado-Ver-o-Peso.jpg">
+            <img src="https://i0.wp.com/viajeinaoparei.com.br/wp-content/uploads/2022/05/praca-do-relogio-belem-do-para.jpg?resize=748%2C561&ssl=1">
+            <img src="https://i0.wp.com/bernadetealves.com/wp-content/uploads/2022/01/Belem-do-Para-rota-criativa-do-Brasil-Bernadete-Alves.jpg?fit=1320%2C825&ssl=1">
+            <img src="https://cop30nopara.com.br/wp-content/uploads/2024/05/Cop-30_belem-post_10.jpg">
+            <img src="https://oconvergente.com.br/wp-content/uploads/2023/12/capa-cop30-1068x575.jpg">
+            <img src="https://www.pimamazonia.com.br/wp-content/uploads/2024/04/Floresta-Amazonica-Foto-iStock-1.webp">
+        </div>
+    </div>
+
+    <h1>Encontre seu hotel</h1>
+
+    <div id="overlay">
+        <div id="loading-spinner"></div>
+    </div>
+
+    <div class="button-container">
+        <button class="button" onclick="irParaPagina('cad.html')">CADASTRE-SE</button>
+        <button class="button" onclick="irParaPagina('tds.html')">LOGIN</button>
+        <button class="button" onclick="irParaPagina('licenciamento.html')">OUTROS</button>
+        
+    </div>
+
+    <script>
+        let index = 0;
+        const maxImages = 8; // Defina o número máximo de imagens que deseja exibir
+        const images = document.querySelectorAll('.carousel-images img');
+
+        function showNextImage() {
+            // Limitar o número de imagens no carrossel usando maxImages
+            index = (index + 1) % maxImages; // Cicla até o limite de maxImages
+            const offset = -index * 100; // Calcula o deslocamento
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+        }
+
+        // Esconder imagens excedentes além do limite definido por maxImages
+        for (let i = maxImages; i < images.length; i++) {
+            images[i].style.display = 'none';
+        }
+
+        // Troca de imagem a cada 3 segundos
+        setInterval(showNextImage, 3000);
+
+        function irParaPagina(pagina) {
+            document.getElementById('overlay').style.display = 'flex';
+            setTimeout(function () {
+                window.location.href = pagina;
+            }, 1000);
+        }
+    </script>
+
+</body>
+
+</html>
