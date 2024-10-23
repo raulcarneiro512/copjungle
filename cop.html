@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COP 30 - Belém</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            overflow-x: hidden;
+            color: white;
+            background-image: url('https://wallpapers.com/images/hd/plano-de-fundo-do-mapa-mundial-1920-x-1080-rj4wrmnr2in2xfs9.jpg'); /* Imagem de fundo da COP 30 */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        section {
+            padding: 100px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        #back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #088008;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        #back-button:hover {
+            background-color: #1bc036;
+        }
+
+        #overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        #loading-spinner {
+            border: 16px solid #3498db;
+            border-top: 16px blue;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="section-title">O que é a COP 30?</div>
+        <div class="section-content">
+            <p>A Conferência das Nações Unidas sobre Mudanças Climáticas, conhecida como COP (Conference of the Parties), é o maior fórum internacional dedicado a discutir soluções para a crise climática. A COP 30, marcada para ocorrer em 2025 na cidade de Belém, Brasil, será um momento crucial para definir novos rumos na luta contra as mudanças climáticas e na preservação da Amazônia, um bioma vital para o planeta.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">A Importância da Amazônia na COP 30</div>
+        <div class="section-content">
+            <p>A Amazônia, o "pulmão do mundo", será o centro das atenções durante a COP 30. A preservação deste bioma é crucial para o equilíbrio climático global, e sua destruição pode ter consequências devastadoras. Belém, sendo uma das principais portas de entrada para a Amazônia, simboliza a importância de encontrar soluções sustentáveis que equilibrem desenvolvimento e conservação ambiental.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Expectativas para a COP 30</div>
+        <div class="section-content">
+            <p>A COP 30 reunirá líderes globais, cientistas, ativistas e organizações para discutir políticas climáticas mais ambiciosas. Espera-se que acordos importantes sejam firmados para reduzir as emissões de gases de efeito estufa e proteger as florestas tropicais. A transição para uma economia mais verde e a justiça climática para as populações vulneráveis também serão tópicos chave.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Por que Belém foi escolhida?</div>
+        <div class="section-content">
+            <p>Belém foi escolhida como sede da COP 30 devido à sua localização estratégica na Amazônia, que é o coração das discussões climáticas globais. A escolha reforça o compromisso do Brasil em assumir um papel central na agenda climática internacional, buscando não apenas preservar a floresta amazônica, mas também liderar o desenvolvimento sustentável na região.</p>
+        </div>
+    </section>
+
+    <button id="back-button" onclick="voltar()">Voltar</button>
+
+    <div id="overlay">
+        <div id="loading-spinner"></div>
+    </div>
+
+    <script>
+        function voltar() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+
+</html>

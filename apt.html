@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuncie no Site</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #088008;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .container p {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .segment-options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .segment-btn {
+            background-color: #f0f0f0;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .segment-btn img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .segment-btn:hover {
+            background-color: #ccc;
+        }
+
+        #back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: rgb(7, 7, 7);
+            background-color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        #back-button:hover {
+            background-color: #1bc036;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Anuncie no COPJUNGLE</h1>
+        <p>Nos ajude a demonstrar para o mundo a nossa solidariedade</p>
+        <p>Em qual segmento você se encaixa?</p>
+
+        <div class="segment-options">
+            <button class="segment-btn" onclick="redirecionar('cpf.html')">
+                <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Física">
+                Física
+            </button>
+            <button class="segment-btn" onclick="redirecionar('cnpj.html')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2983/2983781.png" alt="Jurídica">
+                Jurídica
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function redirecionar(pagina) {
+            window.location.href = pagina;
+        }
+
+        function voltar() {
+            window.history.back();
+        }
+    </script>
+
+    <button id="back-button" onclick="voltar()">Voltar</button>
+
+</body>
+</html>

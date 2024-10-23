@@ -12,13 +12,73 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #088008;
+            color: white;
+            padding: 20px 40px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .nav-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5em;
+            position: relative;
+            padding-bottom: 5px; /* Para espaço para a listra */
+            transition: border-bottom 0.3s ease;
+        }
+
+        /* Adiciona a listra verde ao passar o mouse */
+        nav ul li a:hover {
+            border-bottom: 3px solid #28a745; /* Listra verde */
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 20px;
+        }
+
+        .user-actions a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            position: relative;
+            padding-bottom: 5px;
+            transition: border-bottom 0.3s ease;
+        }
+
+        /* Adiciona a listra verde nas ações do usuário */
+        .user-actions a:hover {
+            border-bottom: 3px solid #28a745;
         }
 
         .carousel {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -35,42 +95,19 @@
         }
 
         .carousel-images img {
-            min-width: 100%; /* Exibe uma imagem por vez */
-            height: 100vh;
+            min-width: 100%;
+            height: 100%;
             object-fit: cover;
         }
 
-        h1 {
+        footer {
+            background-color: rgba(211, 47, 47, 0.8);
             color: white;
-            z-index: 1;
-            margin-bottom: 50px;
-            border: 2px solid white;
+            text-align: center;
             padding: 10px;
-            border-radius: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 1;
-        }
-
-        .button {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            padding: 10px 20px;
-            font-size: 20px;
-            cursor: pointer;
-            background-color: whitesmoke;
-            color: black;
-            border: none;
-            border-radius: 25px;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #3498db;
+            position: relative;
+            z-index: 2;
+            width: 100%;
         }
 
         #overlay {
@@ -104,54 +141,133 @@
                 transform: rotate(360deg);
             }
         }
+
+        .container-xl,
+        .container-xxl {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            position: absolute;
+            bottom: 5%;
+            right: 70%;
+            height: 70%;
+            width: 90%;
+            z-index: 10;
+        }
+
+        .introSection__right {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .introSectionSlide {
+            flex: 2;
+            position: relative;
+        }
+
+        .introSectionImage {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .col-12 {
+            flex: 1;
+            padding-top: 50px;
+            color: white;
+        }
+
+        .introSection__h2 {
+            font-size: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .introSection__h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .introSection__text {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        .btnGame {
+            background-color: #28a745;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btnGame:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 
 <body>
+    <header>
+        <div class="user-actions">
+            <a href="cad.html">Cadastrar</a> |
+            <a href="login.html">Entrar</a> |
+            <a href="apt.html">Hospede em sua casa</a>
+        </div>
+        <nav class="nav-center">
+            <ul>
+                <li><a href="cop.html">COP-30</a></li>
+                <li><a href="bel.html">Belém</a></li>
+                <li><a href="amz.html">Amazônia</a></li>
+            </ul>
+        </nav>
+        <div></div>
+    </header>
+
     <div class="carousel">
         <div class="carousel-images" id="carousel-images">
-            <img src="https://www.ahstatic.com/photos/b9k6_ho_00_p_1024x768.jpg">
-            <img src="https://www.ahstatic.com/photos/b203_ho_00_p_1024x768.jpg">
-            <img src="https://papocultura.com.br/wp-content/uploads/2022/11/Mercado-Ver-o-Peso.jpg">
-            <img src="https://i0.wp.com/viajeinaoparei.com.br/wp-content/uploads/2022/05/praca-do-relogio-belem-do-para.jpg?resize=748%2C561&ssl=1">
+            <img src="https://wallpapers.com/images/hd/leopard-in-forest-of-amazonas-i16dgixbsu77unap.jpg">
+            <img src="https://blog.123milhas.com/wp-content/uploads/2022/09/cidades-amazonia-tres-municipios-com-bons-passeios-floresta-passeio-barco-rios-amazonia-conexao123.jpg.jpg">
+            <img src="https://semma.belem.pa.gov.br/wp-content/uploads/2023/05/Kinds-of-Weather-Dress-for-the-Weather-PowerPoint-Activity.png">
+            <img src="https://i.pinimg.com/originals/14/11/4e/14114ef82df28339a7203e4b2bb41241.jpg">
             <img src="https://i0.wp.com/bernadetealves.com/wp-content/uploads/2022/01/Belem-do-Para-rota-criativa-do-Brasil-Bernadete-Alves.jpg?fit=1320%2C825&ssl=1">
-            <img src="https://cop30nopara.com.br/wp-content/uploads/2024/05/Cop-30_belem-post_10.jpg">
-            <img src="https://oconvergente.com.br/wp-content/uploads/2023/12/capa-cop30-1068x575.jpg">
-            <img src="https://www.pimamazonia.com.br/wp-content/uploads/2024/04/Floresta-Amazonica-Foto-iStock-1.webp">
+            <img src="https://cdn.prod.website-files.com/602bd3abd7ec515cf74e0f52/66c387028bf1c7703064208f_82.jpg">
+            <img src="https://conteudo.imguol.com.br/c/noticias/11/2017/08/21/amazonia-1503351553139_1920x1080.jpg">
         </div>
     </div>
 
-    <h1>Encontre seu hotel</h1>
+    <div class="container-xl container-xxl">
+        <div class="introSection__right"></div>
+        <div class="introSectionSlide"></div>
+
+        <div class="col-12 pt-xl-5">
+            <h2 class="introSection__h2">COPJUNGLE</h2>
+            <h1 class="introSection__h1">Encontre o lugar perfeito para sua estadia em Belém</h1>
+            <p class="introSection__text">A sede da COP30 espera por VOCE!</p>
+            <a href="cad.html" >
+                <button class="btnGame" type="button">SAIBA MAIS</button>
+            </a>
+        </div>
+    </div>
 
     <div id="overlay">
         <div id="loading-spinner"></div>
     </div>
 
-    <div class="button-container">
-        <button class="button" onclick="irParaPagina('cad.html')">CADASTRE-SE</button>
-        <button class="button" onclick="irParaPagina('tds.html')">LOGIN</button>
-        <button class="button" onclick="irParaPagina('licenciamento.html')">OUTROS</button>
-        
-    </div>
-
     <script>
         let index = 0;
-        const maxImages = 8; // Defina o número máximo de imagens que deseja exibir
+        const maxImages = 7;
         const images = document.querySelectorAll('.carousel-images img');
 
         function showNextImage() {
-            // Limitar o número de imagens no carrossel usando maxImages
-            index = (index + 1) % maxImages; // Cicla até o limite de maxImages
-            const offset = -index * 100; // Calcula o deslocamento
+            index = (index + 1) % maxImages;
+            const offset = -index * 100;
             document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
         }
 
-        // Esconder imagens excedentes além do limite definido por maxImages
-        for (let i = maxImages; i < images.length; i++) {
-            images[i].style.display = 'none';
-        }
-
-        // Troca de imagem a cada 3 segundos
         setInterval(showNextImage, 3000);
 
         function irParaPagina(pagina) {
@@ -161,7 +277,6 @@
             }, 1000);
         }
     </script>
-
 </body>
 
 </html>

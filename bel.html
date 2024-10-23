@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belém do Pará</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            overflow-x: hidden;
+            color: white;
+        }
+
+
+        .carousel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+
+        .carousel-images {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+
+        .carousel-images img {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        section {
+            padding: 100px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            position: relative;
+        }
+
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+        .section-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+
+        #back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #088008;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+
+        #back-button:hover {
+            background-color: #1bc036;
+        }
+
+
+        #overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+
+        #loading-spinner {
+            border: 16px solid #3498db;
+            border-top: 16px blue;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+        }
+
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="carousel">
+        <div class="carousel-images" id="carousel-images">
+            <img src="https://media.gettyimages.com/id/624250468/pt/foto/docks-station-in-bel%C3%A9m-par%C3%A1-state-brazil.jpg?s=612x612&w=0&k=20&c=dizfu16-BX2jGvkkcf6I0gGuUuiGrM4k1j_LBISw88U=" >
+            <img src="https://media.gettyimages.com/id/865896902/pt/foto/belem-port-amazon-region.jpg?s=612x612&w=0&k=20&c=9_LBF-ffzvRQhPrWFFyzevGkS27cv5_EyzO_zwCSlLs=" >
+            <img src="https://media.gettyimages.com/id/885643790/pt/foto/amazing-view-of-famous-clocks-square-in-belem-do-para-brazil.jpg?s=612x612&w=0&k=20&c=u127IubXwA59roDhxyVzLU56Fe1p7kD_r4pqE0RBbQc=" >
+            <img src="https://media.gettyimages.com/id/625585882/pt/foto/sunrise-at-the-a%C3%A7ai-market-ver-o-peso-bel%C3%A9m-brazil.jpg?s=612x612&w=0&k=20&c=JnIpY47r5ghnh5DFML0Rq5wCiuriE8E2ilfUinM6oSw=" >
+            <img src="https://media.gettyimages.com/id/141376862/pt/foto/metropolitan-cathedral.jpg?s=612x612&w=0&k=20&c=3fH-kbpSj9h0hx3NaUIzCK-97gERjDlBTTlr9ZIF1Vw=" >
+        </div>
+    </div>
+
+
+    <section>
+        <div class="section-title">História de Belém do Pará</div>
+        <div class="section-content">
+            <p>Belém do Pará, fundada em 12 de janeiro de 1616, é a capital do estado do Pará, situada na região Norte do Brasil.
+            Sua história está intimamente ligada à colonização portuguesa e ao desenvolvimento da Amazônia. Um dos marcos históricos
+            é o Forte do Presépio, construído pelos colonizadores como proteção contra invasões. A cidade se destaca por seu patrimônio
+            cultural e histórico, sendo palco de importantes eventos como o Círio de Nazaré, uma das maiores manifestações religiosas
+            do Brasil.</p>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="section-title">Cultura e Culinária</div>
+        <div class="section-content">
+            <p>A cultura de Belém é marcada pela influência indígena, portuguesa e africana, refletindo-se nas tradições, música e
+            culinária. O mercado Ver-o-Peso é um dos principais pontos de encontro, onde é possível provar delícias regionais como
+            o açaí, tacacá e maniçoba. A culinária paraense é rica em sabores exóticos e autênticos, sendo referência em todo o país.</p>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="section-title">Pontos Turísticos</div>
+        <div class="section-content">
+            <p>Belém oferece uma vasta gama de atrações turísticas, que incluem o Mercado Ver-o-Peso, o Teatro da Paz, a Basílica de
+            Nazaré, e o Mangal das Garças. Para quem deseja conhecer mais da floresta amazônica, a cidade também serve como porta de
+            entrada para passeios de barco pelos rios e florestas que cercam a região.</p>
+        </div>
+    </section>
+
+
+
+
+
+    <button id="back-button" onclick="voltar()">Voltar</button>
+
+
+    <div id="overlay">
+        <div id="loading-spinner"></div>
+    </div>
+
+
+    <script>
+        let index = 0;
+        const maxImages = 5;
+        const images = document.querySelectorAll('.carousel-images img');
+
+
+        function showNextImage() {
+            index = (index + 1) % maxImages;
+            const offset = -index * 100;
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+        }
+
+
+        setInterval(showNextImage, 3000);
+
+
+        function voltar() {
+            window.history.back();
+        }
+    </script>
+
+
+</body>
+
+
+</html>

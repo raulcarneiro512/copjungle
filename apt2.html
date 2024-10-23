@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Estalagem Apartamento 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #088008;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            background-color: #088008;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            color: white;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group select, .form-group input {
+            background-color: #f9f9f9;
+        }
+
+        .continue-btn {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #088008;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+        }
+
+        .continue-btn:hover {
+            background-color: #066006;
+        }
+
+        .input-especifico {
+            display: none;
+            margin-top: 10px;
+        
+        }
+        #back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+            background-color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+
+        #back-button:hover {
+            background-color: #1bc036;
+        }
+
+
+    </style>
+    <script>
+        function voltar() {
+            window.history.back();
+        }
+
+        function toggleInput(selectElement, inputId) {
+            var selectedValue = selectElement.value;
+            var inputElement = document.getElementById(inputId);
+
+            if (selectedValue === "outro") {
+                inputElement.style.display = "block";
+            } else {
+                inputElement.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cadastro de Estalagem</h1>
+        </header>
+
+        <section>
+            <h3>Onde fica a propriedade que você está cadastrando?</h3>
+
+            <div class="form-group">
+                <label for="nome-estalagem">Nome da Estalagem:</label>
+                <input type="text" id="nome-estalagem" name="nome-estalagem" placeholder="Digite o nome da estalagem">
+            </div>
+
+           
+
+            <div class="form-group">
+                <label for="cidade">Cidade (Pará):</label>
+                <select id="cidade" name="cidade" onchange="toggleInput(this, 'input-cidade')">
+                    <option value="" disabled selected>Selecione uma cidade do Pará</option>
+                    <option value="belem">Belém</option>
+                    <option value="anajas">Anajás</option>
+                    <option value="abaetetuba">Abaetetuba</option>
+                    <option value="altamira">Altamira</option>
+                    <option value="barcarena">Barcarena</option>
+                    <option value="braganca">Bragança</option>
+                    <option value="castanhal">Castanhal</option>
+                    <option value="itaituba">Itaituba</option>
+                    <option value="maraba">Marabá</option>
+                    <option value="obidos">Óbidos</option>
+                    <option value="parauapebas">Parauapebas</option>
+                    <option value="redencao">Redenção</option>
+                    <option value="santarem">Santarém</option>
+                    <option value="tucurui">Tucuruí</option>
+                    <option value="outro">Outro (especificar)</option>
+                </select>
+                <input type="text" id="input-cidade" class="input-especifico" placeholder="Digite a cidade" />
+            </div>
+
+            <div class="form-group">
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" placeholder="Digite o CEP">
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" placeholder="Digite o endereço">
+            </div>
+
+            <div class="form-group">
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro">
+            </div>
+
+            <div class="form-group">
+                <label for="numero">Número:</label>
+                <input type="text" id="numero" name="numero" placeholder="Digite o número">
+            </div>
+
+            <button class="continue-btn" onclick="window.location.href='apt3.html'">Continuar</button>
+        </section>
+    </div>
+    <button id="back-button" onclick="voltar()">Voltar</button>
+</body>
+</html>

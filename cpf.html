@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Proprietário Física</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #088008;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            background-color: #088008;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            color: white;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        .dados-pessoais, .tipo-estalagem {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            border-bottom: 2px solid #333;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .tipo-estalagem .est-options {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .tipo-estalagem .option button {
+            background-color: #eee;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tipo-estalagem .option button:hover {
+            background-color: #ddd;
+        }
+
+        .tipo-estalagem .option button img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+        }
+
+        .tipo-estalagem .option button p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        #back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+            background-color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+
+        #back-button:hover {
+            background-color: #1bc036;
+        }
+
+
+    </style>
+    <script>
+        
+        function voltar() {
+            window.history.back();
+                }
+        
+        function redirecionarPagina(url) {
+            window.location.href = url;  
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cadastro Proprietário Física</h1>
+        </header>
+
+        <form>
+            <section class="dados-pessoais">
+                <h2>Dados Pessoais</h2>
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep">
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco">
+                </div>
+                <div class="form-group">
+                    <label for="numero">Número:</label>
+                    <input type="text" id="numero" name="numero">
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" id="bairro" name="bairro">
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone">
+                </div>
+            </section>
+
+            <section class="tipo-estalagem">
+                <h2>Tipo de Estalagem</h2>
+                <div class="est-options">
+                    <div class="option">
+                        <button type="button" onclick="redirecionarPagina('apt1.html')">
+                            <img src="https://www.creativefabrica.com/wp-content/uploads/2019/04/Apartment-icon-by-hellopixelzstudio.jpg" alt="Apartamento">
+                            <p>Apartamento</p>
+                        </button>
+                    </div>
+                    <div class="option">
+                        <button type="button" onclick="redirecionarPagina('apt1.html')">
+                            <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Casa">
+                            <p>Casa</p>
+                        </button>
+                    </div>
+                    <div class="option">
+                        <button type="button" onclick="redirecionarPagina('apt1.html')">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1668/1668915.png" alt="Hotel">
+                            <p>Hotel, B&B e mais</p>
+                        </button>
+                    </div>
+                    <div class="option">
+                        <button type="button" onclick="redirecionarPagina('apt1.html')">
+                            <img src="https://static-00.iconduck.com/assets.00/hotel-accommodation-icon-512x512-p1i5l76d.png" alt="Outras acomodações">
+                            <p>Outras acomodações</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+    <button id="back-button" onclick="voltar()">Voltar</button>
+</body>
+</html>

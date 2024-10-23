@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazônia</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            overflow-x: hidden;
+            color: white;
+            background-image: url('https://wallpapers.com/images/hd/floresta-tropical-do-amazonas-hx01x3s4bh27s4mm.jpg'); 
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        section {
+            padding: 100px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        #back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #088008;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        #back-button:hover {
+            background-color: #1bc036;
+        }
+
+        #overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        #loading-spinner {
+            border: 16px solid #3498db;
+            border-top: 16px blue;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="section-title">História da Amazônia</div>
+        <div class="section-content">
+            <p>A Amazônia, a maior floresta tropical do mundo, abriga uma rica história que remonta a milênios, com comunidades indígenas vivendo em harmonia com a natureza. A chegada dos colonizadores europeus no século 16 iniciou mudanças drásticas na região, que hoje é um dos maiores tesouros ecológicos do planeta.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Biodiversidade</div>
+        <div class="section-content">
+            <p>A Amazônia é o lar de uma biodiversidade sem igual. Com milhões de espécies de plantas, animais e insetos, muitas delas ainda desconhecidas pela ciência, a floresta desempenha um papel vital no equilíbrio ecológico global. Ela é responsável pela produção de 20% do oxigênio da Terra, além de abrigar ecossistemas únicos.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Cultura e Comunidades Indígenas</div>
+        <div class="section-content">
+            <p>A floresta Amazônica é habitada por diversas comunidades indígenas que mantêm suas tradições e modos de vida ancestrais. Com conhecimento profundo sobre a biodiversidade local, essas comunidades têm um papel essencial na preservação do meio ambiente e na proteção da floresta contra ameaças externas.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Pontos Turísticos e Experiências Únicas</div>
+        <div class="section-content">
+            <p>Explorar a Amazônia é uma experiência inesquecível. De passeios de barco pelos rios, visitas a reservas naturais, até o encontro com a rica fauna e flora, a Amazônia oferece aos turistas a oportunidade de se conectar com a natureza de forma profunda. Destinos como o Parque Nacional de Anavilhanas e a Reserva de Mamirauá são alguns dos pontos imperdíveis.</p>
+        </div>
+    </section>
+
+    <button id="back-button" onclick="voltar()">Voltar</button>
+
+    <div id="overlay">
+        <div id="loading-spinner"></div>
+    </div>
+
+    <script>
+        function voltar() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+
+</html>

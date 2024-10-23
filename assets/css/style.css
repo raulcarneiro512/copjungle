@@ -136,6 +136,24 @@ body {
     font-weight: 500;
     color: #fff; 
 }
+#back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+#back-button:hover {
+    background-color: #1bc036;
+}
 
 @media screen and (max-width: 1330px) {
     .form-image {

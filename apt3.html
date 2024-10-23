@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Estalagem Apartamento 3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #088008;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        header {
+            background-color: #088008;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            color: white;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .amenities-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .amenities-list label {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .amenities-list input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .continue-btn {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #088008;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+        }
+
+        .continue-btn:hover {
+            background-color: #066006;
+        }
+
+        /* Novo campo de outra opção */
+        #outro-amenity-input {
+            display: none;
+            margin-top: 10px;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+            background-color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+
+        #back-button:hover {
+            background-color: #1bc036;
+        }
+
+
+    </style>
+    <script>
+        function voltar() {
+            window.history.back();
+        }
+
+        function toggleOutroOption(checkbox) {
+            var outroInput = document.getElementById('outro-amenity-input');
+            if (checkbox.checked) {
+                outroInput.style.display = 'block';
+            } else {
+                outroInput.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cadastro de Estalagem</h1>
+        </header>
+
+        <section>
+            <h3>O que os hóspedes podem usar em sua propriedade?</h3>
+
+            <div class="amenities-list">
+                <label><input type="checkbox" name="amenity" value="bar"> Bar</label>
+                <label><input type="checkbox" name="amenity" value="sauna"> Sauna</label>
+                <label><input type="checkbox" name="amenity" value="jardim"> Jardim</label>
+                <label><input type="checkbox" name="amenity" value="terraco"> Terraço coberto</label>
+                <label><input type="checkbox" name="amenity" value="jacuzzi"> Banheira / Jacuzzi</label>
+                <label><input type="checkbox" name="amenity" value="aquecimento"> Aquecimento</label>
+                <label><input type="checkbox" name="amenity" value="wifi"> Wi-Fi gratuito</label>
+                <label><input type="checkbox" name="amenity" value="ar-condicionado"> Ar-condicionado</label>
+                <label><input type="checkbox" name="amenity" value="piscina"> Piscina</label>
+                <!-- Checkbox para "Outro" -->
+                <label>
+                    <input type="checkbox" name="amenity" value="outro" onclick="toggleOutroOption(this)">
+                    Outro
+                </label>
+                <!-- Input para outra opção -->
+                <input type="text" id="outro-amenity-input" placeholder="Especifique outra opção">
+            </div>
+
+            <button class="continue-btn" onclick="window.location.href='apt4.html'">Continuar</button>
+        </section>
+    </div>
+    <button id="back-button" onclick="voltar()">Voltar</button>
+</body>
+</html>

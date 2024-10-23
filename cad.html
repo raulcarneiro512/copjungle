@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Formulario de cadastro</title>
+    <script>
+        function voltar() {
+            history.back();
+        }
+
+        function enableContinueButton() {
+            const userInput = document.getElementById('user').value;
+            const emailInput = document.getElementById('email').value;
+            const continueButton = document.getElementById('continue-button');
+
+            // Habilita o botão "Continuar" se ambos os campos estão preenchidos
+            continueButton.disabled = !(userInput && emailInput);
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <div class="form-image">
-            <img src="assets/img/cop_30.svg">
+            <img src="https://cop30nopara.com.br/wp-content/uploads/2024/06/Logo_002.png">
         </div>
         <div class="form">
             <form action="#">
@@ -19,26 +33,27 @@
                         <h4>Encontre locais de forma prática e ágil para sua estadia aqui em Belém</h4>
                     </div>
                     <div class="login-button">
-                        <button><a href="#">Entrar</a></button>
+                        <button><a href="login.html">Entrar</a></button>
                     </div>
                 </div>
                 <div class="input-group">
                     <div class="input-box">
                         <label for="user">Usuário</label>
-                        <input id="user" type="text" name="user" placeholder="Crie seu usuário" required>
+                        <input id="user" type="text" name="user" placeholder="Crie seu usuário" required oninput="enableContinueButton()">
                     </div>
 
                     <div class="input-box">
                         <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+                        <input id="email" type="email" name="email" placeholder="Digite seu email" required oninput="enableContinueButton()">
                     </div>
                 </div> 
 
                 <div class="continue-button">
-                    <button type="button" onclick="window.location.href='pass.html'">Continuar</button>
+                    <button type="button" id="continue-button" onclick="window.location.href='pass.html'" disabled>Continuar</button>
                 </div>
             </form>
         </div>
     </div>
+    <button id="back-button" onclick="voltar()">Voltar</button>
 </body>
 </html>
