@@ -5,8 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criação de Senha</title>
     <script>
+        // Função para voltar à página anterior
         function voltar() {
             history.back();
+        }
+
+        // Função para validar se as senhas são iguais antes de submeter o formulário
+        function validarSenhas() {
+            const senha = document.getElementById("password").value;
+            const confirmarSenha = document.getElementById("confirm-password").value;
+
+            // Verifica se as senhas são iguais e atende aos critérios
+            if (senha !== confirmarSenha) {
+                alert("As senhas não coincidem.");
+                return false;
+            } else if (senha.length < 10) {
+                alert("A senha deve ter pelo menos 10 caracteres.");
+                return false;
+            }
+            
+            // Se as senhas forem válidas, permite o redirecionamento
+            return true;
+        }
+
+        // Função para redirecionar
+        function redirecionar() {
+            if (validarSenhas()) {
+                window.location.href = 'serv.html'; // Redireciona para a página
+            }
         }
     </script>
     <style>
@@ -25,7 +51,7 @@
             background-color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 2.12);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
             width: 100%;
             max-width: 500px;
             box-sizing: border-box;
@@ -59,7 +85,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
-            box-sizing: border-box; 
+            box-sizing: border-box;
         }
 
         .input-box input:focus {
@@ -87,6 +113,7 @@
         .login-button button:hover {
             background-color: #1bc036;
         }
+
         #back-button {
             position: fixed;
             bottom: 20px;
@@ -101,7 +128,6 @@
             z-index: 2;
         }
 
-
         #back-button:hover {
             background-color: #1bc036;
         }
@@ -113,22 +139,21 @@
         <h1>Crie uma senha</h1>
         <p>Use pelo menos 10 caracteres, incluindo letras maiúsculas, letras minúsculas e números.</p>
 
-        <form action="#" method="POST">
-            <div class="input-box">
-                <label for="password">Senha *</label>
-                <input id="password" type="password" name="password" placeholder="Insira uma senha" required>
-            </div>
+        <div class="input-box">
+            <label for="password">Senha *</label>
+            <input id="password" type="password" name="password" placeholder="Insira uma senha" required>
+        </div>
 
-            <div class="input-box">
-                <label for="confirm-password">Confirmar senha *</label>
-                <input id="confirm-password" type="password" name="confirm-password" placeholder="Confirme sua senha" required>
-            </div>
+        <div class="input-box">
+            <label for="confirm-password">Confirmar senha *</label>
+            <input id="confirm-password" type="password" name="confirm-password" placeholder="Confirme sua senha" required>
+        </div>
 
-            <div class="login-button">
-                <button type="submit">Criar conta</button>
-            </div>
-        </form>
+        <div class="login-button">
+            <button type="button" onclick="redirecionar()">Criar conta</button>
+        </div>
     </div>
+
     <button id="back-button" onclick="voltar()">Voltar</button>
 
 </body>
